@@ -27,11 +27,11 @@ export default function Navigation() {
                             ) : null}
                             {item.child && item.child.length > 0 ? (
 
-                                <div className=" hidden text-slate-900 absolute z-1 bg-stone-400 w-44 py-2 font-bold top-full "
-                                    style={{ display: click ? "block" : "none" }}
+                                <div className=" hidden text-white absolute z-1 bg-slate-800 w-44 py-2 font-bold top-full "
+                                    style={{ display: click ? 'block' : 'none', transition: 'height 0.5s' }}
                                 >
                                     {item.child.map((child) => (
-                                        <a href={child.url} key={child.id}>
+                                        <a href={child.url} key={child.id} className="flex flex-col px-2 my-2">
                                             {child.name}
                                         </a>
                                     ))}
