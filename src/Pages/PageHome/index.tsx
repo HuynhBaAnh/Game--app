@@ -15,6 +15,7 @@ export default function Navigation() {
     };
     return (
         <>
+
             <nav className="bg-slate-900">
                 <div className="container mx-auto justify-between grid grid-cols-3 lg:grid-cols-5 xl:grid-cols-4">
                     <div className="grid lg:hidden col-span-1 items-center justify-start pl-5 ">
