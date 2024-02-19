@@ -1,12 +1,14 @@
 import './App.css'
-import Navigation from './Pages/PageHome'
+import HomePage from './Pages/PageHome'
+
+
 
 
 function App() {
 
   return (
     <>
-      <Navigation />
+      <HomePage />
     </>
   )
 }
