@@ -1,15 +1,15 @@
 import React from 'react';
 import { navigationMenu } from './navigation';
 import { FaAlignJustify } from "react-icons/fa";
-import Button from '../../Component/Button';
+
 import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css';
 import { Navigation, Pagination, A11y, Autoplay } from 'swiper/modules';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
 import 'swiper/css/scrollbar';
-import DatePicker from 'react-datepicker';
 import 'react-datepicker/dist/react-datepicker.css';
+import Form from '../../Component/Form';
 
 
 
@@ -32,11 +32,8 @@ export default function HomePage() {
         changeSlide === true ? setchangeSlide(false) : setchangeSlide(true)
     }
 
-    //bắt sự kiện chọn ngày
-    const [selectedDate, setSelectedDate] = React.useState<Date | null>(null);
-    const handleDateChange = (date: Date) => {
-        setSelectedDate(date);
-    };
+
+
     return (
         <>
 
@@ -103,40 +100,10 @@ export default function HomePage() {
                     <SwiperSlide><img src="public/2.avif" alt="" style={{ width: '100%' }} /></SwiperSlide>
                 </Swiper>
 
-
-                <div className="container mx-auto border grid grid-cols-5">
-                    <div className="col-span-5 sm:col-span-1 border mx-1">
-                        <DatePicker
-                            selected={selectedDate}
-                            onChange={handleDateChange}
-                            placeholderText="Check in"
-                            dateFormat="dd/MM/yyyy"
-                            isClearable
-                            showYearDropdown
-                            scrollableYearDropdown
-                        />
-                    </div>
-                    <div className="col-span-5 sm:col-span-1 border mx-1">
-                        <DatePicker
-                            selected={selectedDate}
-                            onChange={handleDateChange}
-                            placeholderText="Check out"
-                            dateFormat="dd/MM/yyyy"
-                            isClearable
-                            showYearDropdown
-                            scrollableYearDropdown
-                        />
-                    </div>
-                    <div className="col-span-5 sm:col-span-1 border mx-1">
-
-                    </div>
-                    <div className="col-span-5 sm:col-span-1 border mx-1">
-
-                    </div>
-                    <div className="col-span-5 sm:col-span-1 border mx-1">
-
-                    </div>
+                <div className="absolute text-center left-1/4 top-full z-10 bg-slate-300 h-1/4 flex justify-center items-center">
+                    <Form />
                 </div>
+
             </header>
         </>
 
