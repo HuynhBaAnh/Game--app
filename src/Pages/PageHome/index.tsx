@@ -1,7 +1,7 @@
 import React from 'react';
+import styles from './home.module.scss'
 import { navigationMenu } from './navigation';
 import { FaAlignJustify } from "react-icons/fa";
-
 import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css';
 import { Navigation, Pagination, A11y, Autoplay } from 'swiper/modules';
@@ -10,6 +10,8 @@ import 'swiper/css/pagination';
 import 'swiper/css/scrollbar';
 import 'react-datepicker/dist/react-datepicker.css';
 import Form from '../../Component/Form';
+import Title from '../../Component/Content-Title';
+
 
 
 
@@ -80,7 +82,7 @@ export default function HomePage() {
                 </div>
             </nav>
             <div className="h-0.5 bg-orange-500"></div>
-            <header className=" relative">
+            <header className={` ${styles.header}`}>
                 <Swiper
                     modules={[Navigation, Pagination, A11y, Autoplay]}
                     spaceBetween={1}
@@ -100,11 +102,23 @@ export default function HomePage() {
                     <SwiperSlide><img src="public/2.avif" alt="" style={{ width: '100%' }} /></SwiperSlide>
                 </Swiper>
 
-                <div className="absolute text-center left-1/4 top-full z-10 bg-slate-300 h-1/4 flex justify-center items-center">
+                <div className={`w-3/4 mx-auto ${styles.form}`}>
                     <Form />
                 </div>
-
             </header>
+
+            <div className={`${styles.content}`}>
+                <div className={`container mx-auto grid grid-cols-2`}>
+                    <div className={`col-span-2 lg:col-span-1 ml-3 ${styles.welcome}`}>
+                        <Title title='Welcome to ' />
+                        <Title title='HOTELIER' color='black' />
+                    </div>
+                    <div className={`col-span-2 lg:col-span-1`}>
+
+                    </div>
+
+                </div>
+            </div>
         </>
 
     )

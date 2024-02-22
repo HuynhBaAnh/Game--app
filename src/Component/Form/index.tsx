@@ -36,23 +36,23 @@ export default function Form() {
     };
 
     return (
-        <form className="container mx-auto border grid grid-cols-10" onSubmit={handleSubmit(onSubmit)}>
-            <div className="col-span-8 sm:col-span-2 border mx-1">
-                <input type="date" id="checkIn" {...register("checkIn")} placeholder='Check in' />
+        <form className="grid grid-cols-5 gap-0.5" onSubmit={handleSubmit(onSubmit)}>
+            <div className="col-span-5 sm:col-span-1 mx-1">
+                <input type="date" id="checkIn" {...register("checkIn")} placeholder='Check in' className={styles.input} />
             </div>
-            <div className="col-span-10 sm:col-span-2 border mx-1 relative">
+            <div className="col-span-5 sm:col-span-1 mx-1 relative">
                 <input type="date" id="checkOut" {...register("checkOut")} placeholder='Check out' className={styles.input} />
                 {errors.checkOut &&
                     <div className={styles.error}>{errors.checkOut?.message}</div>
                 }
             </div>
-            <div className="col-span-1o sm:col-span-2 border mx-1">
+            <div className="col-span-5 sm:col-span-1 mx-1">
                 <input type="text" placeholder='Adult' {...register("adult")} id='Adult' className={styles.input} />
             </div>
-            <div className="col-span-1o sm:col-span-2 border mx-1">
+            <div className="col-span-5 sm:col-span-1 mx-1">
                 <input type="text" placeholder='Child' {...register("child")} id='Child' className={styles.input} />
             </div>
-            <div className="col-span-10 sm:col-span-2 border mx-1">
+            <div className="col-span-5 sm:col-span-1 mx-1">
                 <button type="submit" className={`bg-orange-500 ${styles.button}`}>Submit</button>
             </div>
         </form >

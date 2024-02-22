@@ -1,5 +1,8 @@
 .input{
     width: 100%;
+    border: 1px solid black;
+    border-radius: 5px;
+    box-shadow: -5px 5px 5px rgba(78, 77, 77, 0.5) ;
 }
 .submit{
   width: 100%;
@@ -14,6 +17,7 @@
     width: 100%;
     font-weight: 600;
     color: white;
+    box-shadow: -5px 5px 5px rgba(78, 77, 77, 0.5) ;
 }
 
 .error{
