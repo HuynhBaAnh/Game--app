@@ -10,8 +10,8 @@ const form = yup.object({
     child: yup.number().required(),
     checkIn: yup.date().required(),
     checkOut: yup.date()
-        .required("Check-out date is required")
-        .min(yup.ref('checkIn'), 'Error'),
+        .required()
+        .min(yup.ref('checkIn')),
 }).required();
 
 
@@ -36,24 +36,26 @@ export default function Form() {
     };
 
     return (
-        <form className="grid grid-cols-5 gap-0.5" onSubmit={handleSubmit(onSubmit)}>
-            <div className="col-span-5 sm:col-span-1 mx-1">
+        <form className="grid grid-cols-8 gap-0.5" onSubmit={handleSubmit(onSubmit)}>
+            <div className="col-span-8 md:col-span-2 mx-1">
+                <label className={styles.label} htmlFor="checkIn">Check in</label>
                 <input type="date" id="checkIn" {...register("checkIn")} placeholder='Check in' className={styles.input} />
             </div>
-            <div className="col-span-5 sm:col-span-1 mx-1 relative">
-                <input type="date" id="checkOut" {...register("checkOut")} placeholder='Check out' className={styles.input} />
-                {errors.checkOut &&
-                    <div className={styles.error}>{errors.checkOut?.message}</div>
-                }
+            <div className="col-span-8 md:col-span-2 mx-1 relative">
+                <label className={styles.label} htmlFor="checkOut">Check out</label>
+                <input type="date" id="checkOut" {...register("checkOut")} placeholder='Check out' className={`${styles.input} ${errors.checkOut && styles.error}`} />
+
             </div>
-            <div className="col-span-5 sm:col-span-1 mx-1">
+            <div className="col-span-8 md:col-span-1 mx-1">
+                <label className={styles.label} htmlFor="Adult">Adult</label>
                 <input type="text" placeholder='Adult' {...register("adult")} id='Adult' className={styles.input} />
             </div>
-            <div className="col-span-5 sm:col-span-1 mx-1">
+            <div className="col-span-8 md:col-span-1 mx-1">
+                <label className={styles.label} htmlFor="Child">Child</label>
                 <input type="text" placeholder='Child' {...register("child")} id='Child' className={styles.input} />
             </div>
-            <div className="col-span-5 sm:col-span-1 mx-1">
-                <button type="submit" className={`bg-orange-500 ${styles.button}`}>Submit</button>
+            <div className="col-span-8 md:col-span-2 mx-1">
+                <button type="submit" className={`bg-orange-500 my-3 md:my-6 ${styles.button}`}>BOOK NOW</button>
             </div>
         </form >
     );

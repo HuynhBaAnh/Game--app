@@ -3,19 +3,23 @@ position: relative;
 }
 
 .form{
+    margin-top:10px ;
     background-color:white;
     border: 1px solid rgb(48, 48, 48);
     box-shadow: -5px 5px 5px rgb(107, 106, 106);
     border-radius: 5px;
-    padding: 10px;
-    position: absolute;
-    transform: translate(-50%, -50%);
-    z-index: 10;
-    top: 100%;
-    left: 50%;
+}
+@media (min-width: 767px) {
+    .form {
+        margin-top:0px ;
+        position: absolute;
+        z-index: 10;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
 }
 
 .content{
-    margin-top: 90px ;
-    padding-top: 10px;
+
 }
