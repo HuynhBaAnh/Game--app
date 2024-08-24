@@ -116,7 +116,7 @@ function App() {
           {circles.map((circle) => (
             <div
               key={circle.number}
-              className={`absolute w-12 h-12 bg-blue-500 rounded-full flex items-center justify-center cursor-pointer ${circle.clicked ? 'opacity-50' : ''}`}
+              className={`absolute w-12 h-12 bg-blue-500 rounded-full flex items-center justify-center cursor-pointer ${circle.clicked ? 'hidden' : ''}`}
               style={{ top: circle.top, left: circle.left }}
               onClick={() => handleCircleClick(circle.number)}
             >
